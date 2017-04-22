@@ -1,0 +1,24 @@
+.jumbotron h1{
+    padding-left:5%;
+    text-shadow: 1px 2px white;
+}
+
+.jumbotron{
+    height:200px;
+    width:100%;
+    margin-bottom:0;
+    background-image:url("../galka.png");
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    background-size: 100%;
+    
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix + .container-fluid {
+    padding-top: 20px;
+}
