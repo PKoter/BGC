@@ -3,6 +3,10 @@
     text-shadow: 1px 2px white;
 }
 
+.jumbotron h3{
+    color:wheat;
+}
+
 .jumbotron{
     height:200px;
     width:100%;
@@ -20,5 +24,37 @@
 }
 
 .affix + .container-fluid {
-    padding-top: 20px;
+    padding-top: 60px;
 }
+
+nav li p{
+    color:peachpuff;
+    padding-top:1em;
+}
+
+.meme-gallery{
+    width:100%;
+    background-color:grey;
+    display:-webkit-flex;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.meme-gallery .meme{
+    width:50%;
+    display:block;
+    margin-bottom:1em;
+}
+
+.meme img.img-responsive{
+    width:50%;
+    margin:auto;
+}
+
+.meme .well{
+    width:50%;
+    margin:auto;
+}
+
