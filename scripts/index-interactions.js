@@ -10,12 +10,14 @@ $(function(){
         */
         var t = $(this).children("input");
         var badge = $(this).parent().next(".niceys-count").children("span.badge");
-        console.log(t.prop("checked"));
-        if(t.attr("name") == "nicey"){
-            badge.html(1 + Number(badge.html()));
-        }
-        else{
-            badge.html( Number(badge.html()) - 1);
+        if($(this).parent().attr("set") !== t.attr("name")){
+            if(t.attr("name") == "nicey"){
+                badge.html(1 + Number(badge.html()));
+            }
+            else{
+                badge.html( Number(badge.html()) - 1);
+            }
+            $(this).parent().attr("set", t.attr("name"));
         }
     })
 });
