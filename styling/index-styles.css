@@ -58,3 +58,9 @@ nav li p{
     margin:auto;
 }
 
+.well-layout{
+    display:flex;
+    direction:row;
+    justify-content: space-around;
+}
+
