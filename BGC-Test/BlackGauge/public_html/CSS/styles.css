@@ -1,0 +1,35 @@
+body {
+    background-image: url("../images/masc.jpg");
+}
+
+#animate{
+    position: absolute;
+}
+
+#nosacz {
+    display: none;
+}
+
+#formularz {
+    display: block; 
+}
+
+#containter{
+    text-align: center;
+}
+
+p {
+    background-color:grey;
+    color: white;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 150%;
+    padding: 10px;
+	text-shadow: 1px 2px black;
+}
+
+#footer{
+    clear: both;
+    bottom: 0px;
+    position:fixed;
+}
