@@ -2,15 +2,17 @@
 <html>
 
 <head>
+    <title>BGC</title>
     <meta charset="UTF-8" lang="pl-PL">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="styling/index-styles.css">
+    <link rel="stylesheet" href="styling/index-styles.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <script src="scripts/index-interactions.js"></script>
+    <script src="scripts/index-dynamic.js"></script>
 </head>
 
 <body>
@@ -24,50 +26,38 @@
     <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="200">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Domowa Gałka</a></li>
-            <li><a href="#">odin</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">odin</a></li>
             <li><a href="#">dwa</a></li>
             <li><a href="#">three</a></li>
             <li>
-                <p>New memes <span class="badge">2</span></p>
+                <p>Memes <span id="mem-count" class="badge">2</span></p>
             </li>
         </ul>
     </nav>
     <div class="container-fluid">
         <div class="meme-gallery">
-            <div class="meme">
-                <img class="img-responsive" src="promieniowanie_w_kiblu.png" alt="promieniowanie w kiblu" />
-                <div class="well well-layout">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-primary">
-                            <input type="radio" name="nicey"/><span class="glyphicon glyphicon-thumbs-up"></span> Nicey
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="nope"/><span class="glyphicon glyphicon-thumbs-down"></span> Nope
-                        </label>
-                    </div>
-                    <div class="niceys-count">
-                        <span class="glyphicon glyphicon-fire"></span>  <span class="badge">3</span>
-                    </div>
+            <!-- here go all dynamically loaded memes -->
+        </div>
+    </div>
+    <div class="modal fade" id="add-meme-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Add dank meme</h4>
                 </div>
-            </div>
-            <div class="meme">
-                <img class="img-responsive" src="zyska_nigg1.png" alt="zyska rewolwerowiec" />
-                <div class="well well-layout">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-primary">
-                            <input type="radio" name="nicey"/><span class="glyphicon glyphicon-thumbs-up"></span> Nicey
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="nope"/><span class="glyphicon glyphicon-thumbs-down"></span> Nope
-                        </label>
-                    </div>
-                    <div class="niceys-count">
-                        <span class="glyphicon glyphicon-fire"></span>  <span class="badge">5</span>
-                    </div>
+                <div class="modal-body">
+                    <fieldset>
+                        <legend>Type meme's URL</legend>
+                        <input type="text" name="meme-url" id="meme-url" placeholder="url..."/>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addMeme();">Add Meme</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-
     <footer class="well" style="text-align:center">Czarna Gałka Content &copy;</footer>
 </body>
