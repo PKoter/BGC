@@ -1,11 +1,19 @@
 $(function(){
     
     var memes = [
+        // comment this out for tests #if SLOW_INTERNET 
+
         { name: "http://i68.tinypic.com/majoti.png", comment:"", vote: null, rating:11 },
-        { name: "http://i67.tinypic.com/2cf840g.png", comment:"", vote: null, rating:5 },
-        { name: "http://i65.tinypic.com/23lnjns.jpg", comment:"", vote: null, rating:2 },
+        { name: "https://s-media-cache-ak0.pinimg.com/564x/c9/b8/26/c9b82634650ee4d79dd7efa79c3ff6f7.jpg", comment:"", vote: null, rating:5 },
+        { name: "http://i64.tinypic.com/124io39.png", comment:"", vote: null, rating:25 },
         { name: "https://preview.ibb.co/couKO5/YWf50_NNii3r4k.gif", comment:"", vote: null, rating:99 },
         { name: "http://i68.tinypic.com/2j1u06s.png", comment:"", vote: null, rating:23 }
+    
+    /*
+        { name: "16dfdbd2.png", comment:"", vote: null, rating:11 },
+        { name: "zyska_nigg1.png", comment:"", vote: null, rating:5 },
+        { name: "promieniowanie_w_kiblu.png", comment:"", vote: null, rating:25 }
+    */
     ];
     var memCount = memes.length;
     if(typeof(Storage) !== "undefined"){
@@ -36,10 +44,10 @@ function getDynamicMeme(meme, r){
         <div class="well well-layout">
             <div class="btn-group" data-toggle="buttons" set="{0}">
                 <label class="btn btn-primary{1}">
-                    <input type="radio" name="vote" value="nicey" autocomplete="off" {1.1}/><span class="glyphicon glyphicon-thumbs-up"></span> Nicey
+                    <input type="radio" name="vote" value="nicey" autocomplete="off" {1.1}/><span class="glyphicon glyphicon-thumbs-up"></span><span class="space-hide-text"> Nicey</span>
                 </label>
                 <label class="btn btn-primary{2}">
-                    <input type="radio" name="vote" value="nope" autocomplete="off" {2.1}/><span class="glyphicon glyphicon-thumbs-down"></span> Nope
+                    <input type="radio" name="vote" value="nope" autocomplete="off" {2.1}/><span class="glyphicon glyphicon-thumbs-down"></span><span class="space-hide-text"> Nope</span>
                 </label>
             </div>
             <div class="niceys-count">
