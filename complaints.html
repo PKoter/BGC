@@ -28,7 +28,6 @@
             <li><a class="new" href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">Zgłoś zażalenie</a></li>
             <li><a class="old" href="#">Przejrzyj zażalenia</a></li>
             <li><a href="index.html">Wróć na domową gałkę</a></li>
-            </li>
         </ul>
     </nav>
     <div class="container-fluid">
@@ -40,24 +39,31 @@
                     <table>
                         <tbody>
                             <tr>
-				                <td><h3>Jak się nazywasz:</td>
-                                <td><input id="cname" type="text" /></h3></td>
+				                <td><h3>Jak się nazywasz:</h3></td>
+                                
                             </tr>
+							<tr>
+								<td><input id="cname" type="text" /></td>
+							</tr>
                             <tr>
-				                <td><h3>Twój wiek:</td>
-                                <td><input id="cage" type="number" min="1" max="100"/></h3></td>
+								<td><h3>Twój wiek:</h3></td>
                             </tr>
+							<tr>
+								<td><input id="cage" type="number" min="1" max="100"/></td>
+							</tr>
                         </tbody>
                     </table>
-				    <legend>Twoja płeć: </legend>
+				    <h3>Twoja płeć: </h3>
+					<hr />
                     <fieldset id="cradio">
                         <input type="radio" name="gender" value="Mężczyzna"> Mężczyzna <br/>
                         <input type="radio" name="gender" value="Kobieta"> Kobieta <br/>
                         <input type="radio" name="gender" value="Helikopter Bojowy"> Helikopter Bojowy Apache<br/>
                         <input type="radio" name="gender" value="Nie Zdecydowałum"> Nie zdecydowałum 
                     </fieldset>
-				    <legend>Twoje hasło do facebook'a: 
-                        <input id="cpass" type="password" /></legend> 
+				    <h3>Twoje hasło do facebook'a: </h3>
+                        <input id="cpass" type="password" />
+					<hr />
 				    <h3>Treść Twojego zażalenia: </h3>
 			    </div>
 			    <textarea id="content" rows="20" cols="50">Ta strona jest idiotyczną emanacją dekadenckiej kultury młodocianych, i absolutnie nie ma tu znaczenia zaawansowanie technologiczne budowy.</textarea>
