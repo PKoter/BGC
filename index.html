@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>BGC</title>
     <meta charset="UTF-8" lang="pl-PL">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="styling/index-styles.css" type="text/css">
+	<link rel="stylesheet" href="styling/complaint-styles.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="scripts/index-interactions.js"></script>
-    <script src="scripts/index-dynamic.js"></script>
-    <script src="scripts/index-geolocation.js"></script>
+    <script src="scripts/complaints.js"></script>
 </head>
 
 <body>
@@ -25,56 +24,73 @@
     </div>
     <nav class="navbar-inverse" data-spy="affix" data-offset-top="200">
         <ul class="nav titlebar">
-            <li class="active"><a href="#">Domowa Gałka</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">add</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#find-slenderman-modal" title="find location of Slenderman!" onclick="locate();">find</a></li>
-            <li><a href="complaints.html">send</a></li>
-            <li><a class="no-link" href="#"><span class="space-hide-text-sm">Memes</span> <span id="mem-count" class="badge">2</span></a>
-            </li>
+            <li class="active"><a href="#">Zażalenia</a></li>
+            <li><a class="new" href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">Zgłoś zażalenie</a></li>
+            <li><a class="old" href="#">Przejrzyj zażalenia</a></li>
+            <li><a href="index.html">Wróć na domową gałkę</a></li>
         </ul>
     </nav>
     <div class="container-fluid">
-        <div class="meme-gallery">
-            <!-- here go all dynamically loaded memes -->
-        </div>
-    </div>
-    <!-- add meme modal -->
-    <div class="modal fade" id="add-meme-modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Add dank meme</h4>
-                </div>
-                <div class="modal-body">
-                    <fieldset>
-                        <legend>Type meme's URL</legend>
-                        <input type="text" name="meme-url" id="meme-url" placeholder="url..."/>
+        <p>PRZYSTAŃ DLA LUDZI BEZ POCZUCIA HUMORU</p>
+        <div id="new" class="containter">	
+            <form id="formularz">
+                <p>Wylej swoje niezadowolenie: </p>
+                <div id="forms">
+                    <table>
+                        <tbody>
+                            <tr>
+				                <td><h3>Jak się nazywasz:</h3></td>
+                                
+                            </tr>
+							<tr>
+								<td><input id="cname" type="text" /></td>
+							</tr>
+                            <tr>
+								<td><h3>Twój wiek:</h3></td>
+                            </tr>
+							<tr>
+								<td><input id="cage" type="number" min="1" max="100"/></td>
+							</tr>
+                        </tbody>
+                    </table>
+				    <h3>Twoja płeć: </h3>
+					<hr />
+                    <fieldset id="cradio">
+                        <input type="radio" name="gender" value="Mężczyzna"> Mężczyzna <br/>
+                        <input type="radio" name="gender" value="Kobieta"> Kobieta <br/>
+                        <input type="radio" name="gender" value="Helikopter Bojowy"> Helikopter Bojowy Apache<br/>
+                        <input type="radio" name="gender" value="Nie Zdecydowałum"> Nie zdecydowałum 
                     </fieldset>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addMeme();">Add Meme</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+				    <h3>Twoje hasło do facebook'a: </h3>
+                        <input id="cpass" type="password" />
+					<hr />
+				    <h3>Treść Twojego zażalenia: </h3>
+			    </div>
+			    <textarea id="content" rows="20" cols="50">Ta strona jest idiotyczną emanacją dekadenckiej kultury młodocianych, i absolutnie nie ma tu znaczenia zaawansowanie technologiczne budowy.</textarea>
+			    <br/>
+			    <input class="button" type="submit" id="przycisk" value="Wyślij" />
+            </form>
+            <div id="nosacz">
+                <img src="images/nosacz.jpg" alt ="obrazek Nosacza"/>
+            </div>
+                <form id="newform">
+                <p>Dodaj nowe zażalenie</p>
+                <input class="button" type="submit" id="newComplaint" value="Nowy" />
+                </form>
+            <div id="animate">
+                <img src="images/nuggets.gif" alt="obrazek2" />
             </div>
         </div>
-    </div>
-    <!-- geolocation modal -->
-    <div class="modal fade" id="find-slenderman-modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 id="FSM-title">Lokalizacja pobytu Slendermana</h4>
-                </div>
-                <div class="modal-body">
-                    <!-- here go geolocated use... slenderman location from google maps -->
-                    <img id="slenderman-local-map" src='' alt="slenderman location is..."/>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok, thanks</button>
-                </div>
-            </div>
+        <div id="old" class="containter">
+            <div id="allcomplains">
+                
+            </div>		
+        </div>
+        <div id="footer">
+            <p>Na tej stronie z pewnością możesz wysłać autorom swoją opinię o tym serwisie. 
+                Z niezwykle wielkiem prawodopodobieństwem informacje te nie są przechowywane w pamieci podręcznej Twojej przeglądarki,
+                 i na pewno dotrą do autorów niniejszej strony, ponieważ chcą oni poznać Twoją opinię.
+            </p>
         </div>
     </div>
     <footer class="well" style="text-align:center">Czarna Gałka Content &copy;</footer>
