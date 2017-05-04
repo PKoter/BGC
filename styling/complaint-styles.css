@@ -30,7 +30,8 @@ p {
     background-image:url("../images/galka.png");
     background-repeat:no-repeat;
     background-position:center bottom;
-    background-size: 100%; 
+    background-size: 100%;
+    
 }
 
 .affix {
@@ -164,11 +165,17 @@ nav.navbar-inverse{
     border-radius: 15px;
     padding: 10px;
     background-color:grey;
-    border-style:none;
+    border-style:solid;
+	border-color: black;
     text-shadow: 1px 2px black;
     font-weight: bolder;
     color: white;
-    
+}
+
+input[type="submit"]:hover{
+	text-shadow: gold 0em 0em 0.5em;
+    background: radial-gradient(ellipse at center, Gray 0%, White 12%, Black 90%);
+    color: black;
 }
 
 #newform {
@@ -179,4 +186,32 @@ nav.navbar-inverse{
     background-image: url("../images/nigg.png");
     width: 150px;
     height: 220px;
+}
+
+#forms{
+	background-color: white;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+input[type="radio"]:checked ~ *{
+	background: gray !important;
+}
+
+#cradio {
+    display:flex;
+    margin:auto;
+    width:32%;
+    flex-direction: column;
+}
+
+table {
+    margin:auto;
+    width:32%;
+    text-align:left;
+}
+
+td input{
+    width:100%;
+    font-size:1.4em;
 }

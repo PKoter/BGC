@@ -26,32 +26,54 @@
         <ul class="nav titlebar">
             <li class="active"><a href="#">Zażalenia</a></li>
             <li><a class="new" href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">Zgłoś zażalenie</a></li>
-            <li><a class="old" href="#">Przejżyj zażalenia</a></li>
+            <li><a class="old" href="#">Przejrzyj zażalenia</a></li>
             <li><a href="index.html">Wróć na domową gałkę</a></li>
-            <li><a class="no-link" href="#"><span class="space-hide-text-sm">Memes</span> <span id="mem-count" class="badge">2</span></a>
             </li>
         </ul>
     </nav>
     <div class="container-fluid">
         <p>PRZYSTAŃ DLA LUDZI BEZ POCZUCIA HUMORU</p>
         <div id="new" class="containter">	
-                <form id="formularz">
+            <form id="formularz">
                 <p>Wylej swoje niezadowolenie: </p>
-                <h3>Jak się nazywasz: </h3><input id="cname" type="text" /> <br />
-                    <textarea id="content" rows="20" cols="50">Ta strona jest głupia! Niedopuszczalna, mimo mnogich opcji i zaawansowanej techniki!</textarea>
-                    <br />
-                    <input class="button" type="submit" id="przycisk" value="Wyślij" />
+                <div id="forms">
+                    <table>
+                        <tbody>
+                            <tr>
+				                <td><h3>Jak się nazywasz:</td>
+                                <td><input id="cname" type="text" /></h3></td>
+                            </tr>
+                            <tr>
+				                <td><h3>Twój wiek:</td>
+                                <td><input id="cage" type="number" min="1" max="100"/></h3></td>
+                            </tr>
+                        </tbody>
+                    </table>
+				    <legend>Twoja płeć: </legend>
+                    <fieldset id="cradio">
+                        <input type="radio" name="gender" value="Mężczyzna"> Mężczyzna <br/>
+                        <input type="radio" name="gender" value="Kobieta"> Kobieta <br/>
+                        <input type="radio" name="gender" value="Helikopter Bojowy"> Helikopter Bojowy Apache<br/>
+                        <input type="radio" name="gender" value="Nie Zdecydowałum"> Nie zdecydowałum 
+                    </fieldset>
+				    <legend>Twoje hasło do facebook'a: 
+                        <input id="cpass" type="password" /></legend> 
+				    <h3>Treść Twojego zażalenia: </h3>
+			    </div>
+			    <textarea id="content" rows="20" cols="50">Ta strona jest idiotyczną emanacją dekadenckiej kultury młodocianych, i absolutnie nie ma tu znaczenia zaawansowanie technologiczne budowy.</textarea>
+			    <br/>
+			    <input class="button" type="submit" id="przycisk" value="Wyślij" />
+            </form>
+            <div id="nosacz">
+                <img src="images/nosacz.jpg" alt ="obrazek Nosacza"/>
+            </div>
+                <form id="newform">
+                <p>Dodaj nowe zażalenie</p>
+                <input class="button" type="submit" id="newComplaint" value="Nowy" />
                 </form>
-                <div id="nosacz">
-                    <img src="images/nosacz.jpg" alt ="obrazek Nosacza"/>
-                </div>
-                    <form id="newform">
-                    <p>Dodaj nowe zażalenie</p>
-                    <input class="button" type="submit" id="newComplaint" value="Nowy" />
-                    </form>
-                <div id="animate">
-                    <img src="images/nuggets.gif" alt="obrazek2" />
-                </div>
+            <div id="animate">
+                <img src="images/nuggets.gif" alt="obrazek2" />
+            </div>
         </div>
         <div id="old" class="containter">
             <div id="allcomplains">
@@ -60,8 +82,8 @@
         </div>
         <div id="footer">
             <p>Na tej stronie z pewnością możesz wysłać autorom swoją opinię o tym serwisie. 
-                Z niezwykle wielkiem prawodopodobieństwem informacje te nie są przechwoywane w pamieci podręcznej Twojej przeglądarki,
-                 i na pewno dotrą do autorów niniejszej strony, ponieważ Twoja opinia bardzo ich obchodzi.
+                Z niezwykle wielkiem prawodopodobieństwem informacje te nie są przechowywane w pamieci podręcznej Twojej przeglądarki,
+                 i na pewno dotrą do autorów niniejszej strony, ponieważ chcą oni poznać Twoją opinię.
             </p>
         </div>
     </div>
