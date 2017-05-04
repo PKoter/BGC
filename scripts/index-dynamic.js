@@ -1,19 +1,17 @@
+/**
+ * page load starting point- generates meme-gallery content.
+ * Meme urls are loaded from localStorage (if any) as well as votes.
+ * *Cancels event propagation in children.
+ */
 $(function(){
     
     var memes = [
         // comment this out for tests #if SLOW_INTERNET 
-
         { name: "http://i68.tinypic.com/majoti.png", comment:"", vote: null, rating:11 },
         { name: "https://s-media-cache-ak0.pinimg.com/564x/c9/b8/26/c9b82634650ee4d79dd7efa79c3ff6f7.jpg", comment:"", vote: null, rating:5 },
         { name: "http://i64.tinypic.com/124io39.png", comment:"", vote: null, rating:25 },
         { name: "https://preview.ibb.co/couKO5/YWf50_NNii3r4k.gif", comment:"", vote: null, rating:99 },
         { name: "http://i68.tinypic.com/2j1u06s.png", comment:"", vote: null, rating:23 }
-    
-    /*
-        { name: "16dfdbd2.png", comment:"", vote: null, rating:11 },
-        { name: "zyska_nigg1.png", comment:"", vote: null, rating:5 },
-        { name: "promieniowanie_w_kiblu.png", comment:"", vote: null, rating:25 }
-    */
     ];
     var memCount = memes.length;
     if(typeof(Storage) !== "undefined"){
@@ -55,6 +53,7 @@ function getDynamicMeme(meme, r){
             </div>
         </div>
     </div>`;
+    //choose right values, remove placeholders and inject values
     if(meme.vote === 'nicey'){
         r = [meme.vote, " active", "checked", "", ""];
     }
@@ -66,25 +65,4 @@ function getDynamicMeme(meme, r){
     }
     cnt = cnt.replace("{0}", r[0]).replace('{1}', r[1]).replace("{1.1}", r[2]).replace("{2}", r[3]).replace("{2.1}", r[4]);
     return cnt;
-}
-
-function addMeme(){
-    var mname = $("#meme-url").val();
-    if(typeof(Storage) !== "undefined"){
-        var memes = JSON.parse(localStorage.getItem("memes"));
-        for(var i = 0; i < memes.length; i++){
-            if(memes[i].name === mname)
-                return;
-        }
-        var meme = {name:mname, comment:"", vote:null, rating: Math.round(Math.random()*33)}
-        memes.push(meme);
-        localStorage.setItem("memCount", memes.length);
-        localStorage.setItem("memes", JSON.stringify(memes));
-        var content = $(".meme-gallery").html();
-        content += getDynamicMeme(meme, Array(5));
-
-        $(".meme-gallery").html(content);
-        $("#mem-count").html(memes.length);
-        $("#meme-url").val("");
-    }
 }

@@ -15,8 +15,7 @@
     background-image:url("../galka.png");
     background-repeat:no-repeat;
     background-position:center bottom;
-    background-size: 100%;
-    
+    background-size: 100%; 
 }
 
 .affix {
@@ -138,4 +137,8 @@ nav.navbar-inverse{
     span.space-hide-text{
         display:none;
     }
+}
+
+#slenderman-local-map{
+    width:100%;
 }

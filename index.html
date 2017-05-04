@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>BGC</title>
     <meta charset="UTF-8" lang="pl-PL">
@@ -13,6 +12,7 @@
         crossorigin="anonymous"></script>
     <script src="scripts/index-interactions.js"></script>
     <script src="scripts/index-dynamic.js"></script>
+    <script src="scripts/index-geolocation.js"></script>
 </head>
 
 <body>
@@ -26,9 +26,9 @@
     <nav class="navbar-inverse" data-spy="affix" data-offset-top="200">
         <ul class="nav titlebar">
             <li class="active"><a href="#">Domowa Gałka</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">odin</a></li>
-            <li><a href="#">dwa</a></li>
-            <li><a href="#">three</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#add-meme-modal" title="add dank meme">add</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#find-slenderman-modal" title="find location of Slenderman!" onclick="locate();">find</a></li>
+            <li><a href="#">send</a></li>
             <li><a class="no-link" href="#"><span class="space-hide-text-sm">Memes</span> <span id="mem-count" class="badge">2</span></a>
             </li>
         </ul>
@@ -38,6 +38,7 @@
             <!-- here go all dynamically loaded memes -->
         </div>
     </div>
+    <!-- add meme modal -->
     <div class="modal fade" id="add-meme-modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -54,6 +55,24 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addMeme();">Add Meme</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- geolocation modal -->
+    <div class="modal fade" id="find-slenderman-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="FSM-title">Lokalizacja pobytu Slendermana</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- here go geolocated use... slenderman location from google maps -->
+                    <img id="slenderman-local-map" src='' alt="slenderman location is..."/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok, thanks</button>
                 </div>
             </div>
         </div>

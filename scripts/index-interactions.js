@@ -1,3 +1,6 @@
+/**
+ * Invoked, when click event happens on meme rating buttons, and steers meme rating. Saves result.
+ */
 $(function(){
     $(".meme-gallery").off().on('click', "div[data-toggle='buttons'] label",function(e){
         var t = $(this).children("input");
@@ -27,6 +30,12 @@ $(function(){
         }
     });
 });
+/**
+ * Increments or decrements votes basing on num.
+ * @param {any} t 
+ * @param {any} badge - object with vote number
+ * @param {any} num - value determined by load function. Equals -1, 1 or 2 
+ */
 function incVotes(t, badge, num){
     if(t.attr("value") == "nicey"){
         badge.html(num + Number(badge.html()));
@@ -36,6 +45,12 @@ function incVotes(t, badge, num){
     }
 }
 
+/**
+ * returns meme from memes of name
+ * @param {any} memes 
+ * @param {any} name 
+ * @returns 
+ */
 function getMem(memes, name){
     for(var i = 0; i < memes.length; i++){
         if(memes[i].name === name){
@@ -44,13 +59,13 @@ function getMem(memes, name){
     }
 }
 
-function setMem(memes, mem){
-    for(var i = 0; i < memes.length; i++){
-        if(memes[i] === mem)
-            memes[i] = mem;
-    }
-}
-
+/**
+ * sets mem rating, vote type and saves memes to localStorage
+ * @param {any} memes - array of memes
+ * @param {any} mem - meme object being voted on.
+ * @param {any} badge
+ * @param {any} votetype
+ */
 function saveMemes(memes, mem, badge, votetype){
     if(typeof(Storage) !== "undefined"){
         mem.rating = Number(badge.html());
