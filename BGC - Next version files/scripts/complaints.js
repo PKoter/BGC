@@ -8,7 +8,6 @@ var start_complaints = [
 ];
 
 window.onload = function(){
-	//localStorage.clear();
     var guzik = document.getElementById('przycisk');
     var hrefs = document.getElementsByTagName('a');
     for (var i=0;i<hrefs.length;i++){
@@ -23,7 +22,7 @@ window.onload = function(){
 };
 
 function compSending(){
-    //snd.play();
+    snd.play();
     
     if (allFields()){ 
 		new_complain();
@@ -97,7 +96,6 @@ function newComplaint(){
 }
 
 function refresh(){
-    //localStorage.clear();
     var obj = JSON.stringify(start_complaints);
     var complaints = JSON.parse(obj);
     if (typeof(Storage) !== "undefined") {
@@ -128,15 +126,10 @@ function new_complain(){
     var comment = document.getElementById('content').value;
 	var cage = document.getElementById('cage').value;
     var cgender = document.getElementById('formularz')['gender'].value;
-    
-	//alert(cage);
-	//alert(cgender);
 	
     var temp = JSON.parse(localStorage.getItem('gauge_comments') || "[]");
     
     var newcom = {name: cname, comment: comment, age: cage, gender: cgender};
-    
-	alert(JSON.stringify(newcom));
 	
     temp.push(newcom);
     
