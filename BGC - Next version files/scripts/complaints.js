@@ -22,9 +22,8 @@ window.onload = function(){
 };
 
 function compSending(){
-    snd.play();
-    
     if (allFields()){ 
+	    	snd.play();
 		new_complain();
 		var elem1 = document.getElementById('formularz');
 		var elem2 = document.getElementById('nosacz');
