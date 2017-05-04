@@ -1,3 +1,18 @@
+body {
+    background-image: url("../images/masc.jpg");
+}
+
+p {
+    background-color:grey;
+    color: white;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 150%;
+    padding: 10px;
+    text-shadow: 1px 2px black;
+    text-align: center;
+}
+
 .jumbotron h1{
     padding-left:5%;
     text-shadow: 1px 2px 3px darkturquoise;
@@ -91,54 +106,77 @@ nav.navbar-inverse{
     }
 }
 
-.meme-gallery{
-    width:100%;
+.complaint {
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+}
+
+.allcomplains {
+    text-align: center;
+    padding: 100px;
+}
+
+.containter{
+    text-align: center;
+}
+
+#animate{
+    position: absolute;
+    display:none;
+}
+
+#nosacz {
+    display: none;
+	position: relative;
+    right: 0px;
+}
+
+#formularz {
+    display: block; 
+}
+
+#footer{
+    bottom: 0px;
+    position:relative;
+}
+
+#nigg {
+    display: none;
+	position: relative;
+    right: 0px;
+}
+
+#new {
+	display: block;
+}
+
+#old {
+	display: none;
+}
+
+.button {
+    border-radius: 15px;
+    padding: 10px;
     background-color:grey;
-    display:-webkit-flex;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items: center;
-}
-
-.well-layout{
-    display:flex;
-    direction:row;
-    justify-content: space-around;
-}
-
- .meme img.img-responsive{
-    width:100%;
-    margin:auto;
-}
-
-@media screen and (min-width: 1200px){
-    .meme-gallery .meme{
-        width:25%;
-        min-width:340px;
-        display:block;
-    }
-}
-@media screen and (max-width: 1200px) and (min-width:780px){
-    .meme-gallery .meme{
-        width:28%;
-        min-width:300px;
-        display:block;
-    }
-}
-
-@media screen and (max-width: 780px){
+    border-style:none;
+    text-shadow: 1px 2px black;
+    font-weight: bolder;
+    color: white;
     
-    .meme-gallery .meme{
-        width:40%;
-        min-width:250px;
-        display:block;
-    }
-    span.space-hide-text{
-        display:none;
-    }
 }
 
-#slenderman-local-map{
-    width:100%;
+#newform {
+    display: none;
+}
+
+#newComplaint {
+    background-image: url("../images/nigg.png");
+    width: 150px;
+    height: 220px;
 }

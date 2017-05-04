@@ -33,6 +33,6 @@ function onSuccess(position){
  * @param {any} error - @CanBeNull isn't used anywhere
  */
 function onError(error){
-    document.getElementById("slenderman-local-map").src = "slendermans_hideout.png";
+    document.getElementById("slenderman-local-map").src = "../images/slendermans_hideout.png";
     document.getElementById("FSM-title").innerHTML = "We were unable to determine accurate location of Slenderman...";
 }
