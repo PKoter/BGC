@@ -66,3 +66,24 @@ function getDynamicMeme(meme, r){
     cnt = cnt.replace("{0}", r[0]).replace('{1}', r[1]).replace("{1.1}", r[2]).replace("{2}", r[3]).replace("{2.1}", r[4]);
     return cnt;
 }
+
+function addMeme(){
+    var mname = $("#meme-url").val();
+    if(typeof(Storage) !== "undefined"){
+        var memes = JSON.parse(localStorage.getItem("memes"));
+        for(var i = 0; i < memes.length; i++){
+            if(memes[i].name === mname)
+                return;
+        }
+        var meme = {name:mname, comment:"", vote:null, rating: Math.round(Math.random()*33)}
+        memes.push(meme);
+        localStorage.setItem("memCount", memes.length);
+        localStorage.setItem("memes", JSON.stringify(memes));
+        var content = $(".meme-gallery").html();
+        content += getDynamicMeme(meme, Array(5));
+
+        $(".meme-gallery").html(content);
+        $("#mem-count").html(memes.length);
+        $("#meme-url").val("");
+    }
+}
